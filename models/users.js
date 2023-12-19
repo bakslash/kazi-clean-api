@@ -26,7 +26,8 @@ module.exports = (sequelize) => {
       role,
       password: hashedPassword,
     });
+    {tableName: 'Users'}
   };
-
+ 
   return Users;
 };

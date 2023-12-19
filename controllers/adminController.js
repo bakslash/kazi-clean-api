@@ -85,8 +85,7 @@ exports.getUsers = async (req, res) => {
 
 
 
-
-exports.login = async (req, res) => {
+ exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -99,25 +98,25 @@ exports.login = async (req, res) => {
     }
 
     // Compare the entered password with the hashed password in the database
-    bcrypt.compare(password, user.password, (err, passwordMatch) => {
-      if (err || !passwordMatch) {
-        return res.status(401).json({ success: false, message: 'Invalid email or password' });
-      }
+    const passwordMatch = await bcrypt.compare(password, user.password);
 
-      // Create a JWT token for the user
-      const token = jwt.sign({ userId: user.id }, 'your-secret-key', { expiresIn: '1h' });
-console.log('t',token);
-      // Send the token and user information in the response
-      res.status(200).json({
-        success: true,
-        message: 'Login successful',
-        token,
-        user: {
-          id: user.id,
-          email: user.email,
-          // Add other user properties you want to include
-        },
-      });
+    if (!passwordMatch) {
+      return res.status(401).json({ success: false, message: 'Invalid email or password' });
+    }
+
+    // Create a JWT token for the user
+    const token = jwt.sign({ userId: user.id }, 'your-secret-key', { expiresIn: '1h' });
+
+    // Send the token and user information in the response
+    res.status(200).json({
+      success: true,
+      message: 'Login successful',
+      token,
+      user: {
+        id: user.id,
+        email: user.email,
+        // Add other user properties you want to include
+      },
     });
   } catch (error) {
     console.error(error);
