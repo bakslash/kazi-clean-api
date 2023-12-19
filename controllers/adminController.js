@@ -70,7 +70,7 @@ exports.getUsers = async (req, res) => {
      const hashedPassword = await bcrypt.hash(password, 10);
  
      // Create a new user with the provided role and hashed password
-     const newUser = await models.Users.createUser(email, role, hashedPassword);
+     const newUser = await users.createUser(email, role, hashedPassword);
  
      return res.status(201).json({
        success: true,
