@@ -30,6 +30,15 @@ const authService = require('../services/authService');
 // };
 
 // Register a new user
+const createUser = async (email, role,hashedPassword) => {
+  return models.Users.create({
+    email,
+  
+    role,
+    password: hashedPassword,
+    //status: 1, // Assuming 1 means "active"
+  })
+}
 
 exports.getUsers = async (req, res) => {
     try {
@@ -70,7 +79,7 @@ exports.getUsers = async (req, res) => {
      const hashedPassword = await bcrypt.hash(password, 10);
  
      // Create a new user with the provided role and hashed password
-     const newUser = await users.createUser(email, role, hashedPassword);
+     const newUser = await createUser(email, role, hashedPassword);
  
      return res.status(201).json({
        success: true,
