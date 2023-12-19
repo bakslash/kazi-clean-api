@@ -109,10 +109,9 @@ exports.getUsers = async (req, res) => {
    
 
     // Compare the entered password with the hashed password in the database
-   // const passwordMatch = await bcrypt.compare(password, user.password);
+    const passwordMatch = await bcrypt.compare(password, user.password);
 //admin by pass
-   const passwordMatch = (password == user.password)
-   console.log('check',passwordMatch);
+  
 
     if (!passwordMatch) {
       return res.status(401).json({ success: false, message: 'Invalid email or password' });
