@@ -1,17 +1,21 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "kazipay",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username" : "doadmin",
+"password" :"AVNS_5dtRHTIG0DGs8ymrVAz",
+"host" : "kazipay-do-user-15324924-0.c.db.ondigitalocean.com",
+"port" : "25060",
+"database" : "kazipay",
+"dialect": "mysql"
+
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username" : "doadmin",
+"password" :"AVNS_5dtRHTIG0DGs8ymrVAz",
+"host" : "kazipay-do-user-15324924-0.c.db.ondigitalocean.com",
+"port" : "25060",
+"database" : "defaultdb",
+"dialect": "mysql",
+"sslmode" : "REQUIRED"
   },
   "production": {
     "username": "root",
