@@ -1,10 +1,23 @@
 {
   "development": {
-    "username": "kazipay_user",
-    "password": "rzAEAqQejHv4GWM1KufMJ8AMwidxwD2Y",
+    "username": "root",
+    "password": null,
     "database": "kazipay",
-    "host": "dpg-cm01m7eg1b2c73clcnb0-a",
-    "dialect": "postgres"
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   }
-  
 }
