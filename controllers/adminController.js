@@ -34,10 +34,10 @@ const authService = require('../services/authService');
 exports.getUsers = async (req, res) => {
     try {
       // Retrieve a list of all students from the database
-      const roles = await models.Role.findAll({
+      const roles = await models.role.findAll({
         // include: [
         //   {
-        //     model: models.Role, 
+        //     model: models.role, 
              
         //   }]
       });
@@ -53,14 +53,14 @@ exports.getUsers = async (req, res) => {
 
  // Adjust the path based on your project structure
 
- const { Users } = require('../models'); // Adjust the path based on your project structure
+ const { users } = require('../models'); // Adjust the path based on your project structure
 
  exports.registerUser = async (req, res) => {
    try {
      const { email, password, role } = req.body;
  
      // Check if the email already exists
-     const existingUser = await Users.findOne({ where: { email } });
+     const existingUser = await users.findOne({ where: { email } });
      
      if (existingUser) {
        return res.status(400).json({ success: false, message: 'Email already exists' });
@@ -70,7 +70,7 @@ exports.getUsers = async (req, res) => {
      const hashedPassword = await bcrypt.hash(password, 10);
  
      // Create a new user with the provided role and hashed password
-     const newUser = await Users.createUser(email, role, hashedPassword);
+     const newUser = await users.createUser(email, role, hashedPassword);
  
      return res.status(201).json({
        success: true,
@@ -91,7 +91,7 @@ exports.login = async (req, res) => {
     const { email, password } = req.body;
 
     // Find the user by email
-    const user = await Users.findOne({ where: { email } });
+    const user = await users.findOne({ where: { email } });
 
     // If the user does not exist, return an error
     if (!user) {

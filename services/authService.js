@@ -5,7 +5,7 @@ const models = require('../models'); // Assuming you have a models file
 const authenticateUser = async (email, password) => {
   try {
     
-    const user = await models.Users.findOne({
+    const user = await models.users.findOne({
      where: { email },
      
     });

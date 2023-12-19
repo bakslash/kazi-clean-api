@@ -1,7 +1,7 @@
 {
   "development": {
-    "username" : "doadmin",
-"password" :"AVNS_5dtRHTIG0DGs8ymrVAz",
+    "username" : "kazipay",
+"password" :"AVNS_EsudpydzseoWXwUDp1-",
 "host" : "kazipay-do-user-15324924-0.c.db.ondigitalocean.com",
 "port" : "25060",
 "database" : "kazipay",
@@ -9,20 +9,20 @@
 
   },
   "test": {
-    "username" : "doadmin",
-"password" :"AVNS_5dtRHTIG0DGs8ymrVAz",
+    "username" : "kazipay",
+"password" :"AVNS_EsudpydzseoWXwUDp1-",
 "host" : "kazipay-do-user-15324924-0.c.db.ondigitalocean.com",
 "port" : "25060",
-"database" : "defaultdb",
+"database" : "kazipay",
 "dialect": "mysql",
 "sslmode" : "REQUIRED"
   },
   "production": {
-    "username" : "doadmin",
-"password" :"AVNS_5dtRHTIG0DGs8ymrVAz",
+    "username" : "kazipay",
+"password" :"AVNS_EsudpydzseoWXwUDp1-",
 "host" : "kazipay-do-user-15324924-0.c.db.ondigitalocean.com",
 "port" : "25060",
-"database" : "defaultdb",
+"database" : "kazipay",
 "dialect": "mysql",
 "sslmode" : "REQUIRED"
   }
