@@ -13,7 +13,7 @@ const express = require('express');
 // const authenticateUser = require('./middlewares/authenticateUser');
 
 const app = express();
-
+app.use(cors({origin:'*'}))
 // Middleware for parsing JSON in request body
 app.use(express.json());
 app.use(bodyParser.json());
