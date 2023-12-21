@@ -1,22 +1,22 @@
 {
   "production": {
-    "username": "kazipay",
-    "password": "AVNS_EsudpydzseoWXwUDp1-",
-    "host": "kazipay-do-user-15324924-0.c.db.ondigitalocean.com",
-    "port": "25060",
+    "username": "marcus",
+    "password": "Muasa@2020New",
+    "host": "178.62.77.11",
+    "port": "3306",
     "database": "kazipay",
     "dialect": "mysql"
   },
-  "test": {
-    "username": "root",
-    "password": "",
-    "host": "localhost",
+  "development": {
+    "username": "marcus",
+    "password": "Muasa@2020New",
+    "host": "178.62.77.11",
     "port": "3306",
     "database": "kazipay",
     "dialect": "mysql"
     
   },
-  "development": {
+  "dev": {
     "username": "root",
     "password": "",
     "host": "localhost",

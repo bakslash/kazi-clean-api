@@ -3,6 +3,7 @@ const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class Orders extends Model {
+
     static associate(models) {
       Orders.belongsTo(models.Customers, {
         foreignKey: 'customerId',
@@ -10,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate: 'CASCADE', // Cascade update when a customer's ID is updated
       });
     }
+    
   }
 
   Orders.init({
