@@ -1,29 +1,29 @@
 {
-  "development": {
-    "username" : "kazipay",
-"password" :"AVNS_EsudpydzseoWXwUDp1-",
-"host" : "kazipay-do-user-15324924-0.c.db.ondigitalocean.com",
-"port" : "25060",
-"database" : "kazipay",
-"dialect": "mysql"
-
+  "dev": {
+    "username": "kazipay",
+    "password": "AVNS_EsudpydzseoWXwUDp1-",
+    "host": "kazipay-do-user-15324924-0.c.db.ondigitalocean.com",
+    "port": "25060",
+    "database": "kazipay",
+    "dialect": "mysql"
   },
   "test": {
-    "username" : "kazipay",
-"password" :"AVNS_EsudpydzseoWXwUDp1-",
-"host" : "kazipay-do-user-15324924-0.c.db.ondigitalocean.com",
-"port" : "25060",
-"database" : "kazipay",
-"dialect": "mysql",
-"sslmode" : "REQUIRED"
+    "username": "root",
+    "password": "",
+    "host": "localhost",
+    "port": "3306",
+    "database": "kazipay",
+    "dialect": "mysql"
+    
   },
-  "production": {
-    "username" : "kazipay",
-"password" :"AVNS_EsudpydzseoWXwUDp1-",
-"host" : "kazipay-do-user-15324924-0.c.db.ondigitalocean.com",
-"port" : "25060",
-"database" : "kazipay",
-"dialect": "mysql",
-"sslmode" : "REQUIRED"
+  "development": {
+    "username": "root",
+    "password": "",
+    "host": "localhost",
+    "port": "3306",
+    "database": "kazipay",
+    "dialect": "mysql"
+    
   }
+  
 }

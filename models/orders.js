@@ -15,6 +15,8 @@ module.exports = (sequelize, DataTypes) => {
   Orders.init({
     discountAmount: DataTypes.INTEGER,
     discountReason: DataTypes.STRING,
+    service: DataTypes.STRING,
+    uom: DataTypes.STRING,
     totalPrice: DataTypes.INTEGER,
     pickUpTime: DataTypes.TIME,
     pickDate: DataTypes.DATE,

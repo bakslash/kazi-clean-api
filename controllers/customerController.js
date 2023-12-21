@@ -27,10 +27,34 @@ const getCustomerById = async (req, res) => {
   }
 };
 
+const getCustomerByPhone = async (req, res) => {
+  const phone_number = req.body.phone_number;
+console.log('ch',phone_number,req.body);
+  try {
+    const customer = await Customers.findOne({ where: { phone_number }});
+    if (!customer) {
+      return res.status(404).json({ error: 'Customer not found' });
+    }
+    console.log('cus',customer);
+    res.json(customer);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
+
 const addCustomer = async (req, res) => {
   const { first_name, last_name, phone_number, address,hear_about_us } = req.body;
 
+
   try {
+
+    const existingCustomer = await Customers.findOne({ where: { phone_number } });
+     
+    if (existingCustomer) {
+      return res.status(400).json({ success: false, message: 'Phone already exists' });
+    }
+
     const newCustomer = await Customers.create({
       first_name,
       last_name,
@@ -51,4 +75,5 @@ module.exports = {
   getAllCustomers,
   getCustomerById,
   addCustomer,
+  getCustomerByPhone
 };

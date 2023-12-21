@@ -25,6 +25,7 @@ const addOrder = async (req, res) => {
         first_name,
         last_name,
         address,
+        phone_number,
         hear_about_us
         // Add other customer details here
       },
