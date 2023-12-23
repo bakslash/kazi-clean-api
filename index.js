@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use('/admin', adminRoutes);
 app.use('/customers', customerRoutes);
 app.use('/orders', orderRoutes);
-app.use('/roles', orderRoutes);
+app.use('/roles', rolesRoutes);
 
 const PORT = process.env.PORT || 5000;
 
