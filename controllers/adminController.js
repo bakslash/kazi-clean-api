@@ -43,7 +43,7 @@ const createUser = async (email, role,hashedPassword) => {
 exports.getUsers = async (req, res) => {
     try {
       // Retrieve a list of all students from the database
-      const roles = await models.Role.findAll({
+      const roles = await models.role.findAll({
         // include: [
         //   {
         //     model: models.role, 
@@ -53,8 +53,8 @@ exports.getUsers = async (req, res) => {
   
       return res.status(200).json(roles);
     } catch (error) {
-      console.error('Error retrieving users:', error);
-      return res.status(500).json({ error: 'Unable to retrieve users.' });
+      console.error('Error retrieving roles:', error);
+      return res.status(500).json({ error: 'Unable to retrieve users.' ,error});
     }
   };
 
