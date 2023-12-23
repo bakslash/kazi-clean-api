@@ -4,6 +4,7 @@ const express = require('express');
 const adminRoutes = require('./routes/adminRoutes');
 const customerRoutes = require('./routes/customerRoutes');
 const orderRoutes = require('./routes/orderRoutes');
+const rolesRoutes = require('./routes/rolesRoutes');
 const listEndpoints = require('express-list-endpoints');
 
 const app = express();
@@ -17,6 +18,7 @@ app.use(bodyParser.json());
 app.use('/admin', adminRoutes);
 app.use('/customers', customerRoutes);
 app.use('/orders', orderRoutes);
+app.use('/roles', orderRoutes);
 
 const PORT = process.env.PORT || 5000;
 
