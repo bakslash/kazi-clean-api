@@ -1,9 +1,9 @@
 const { Role } = require('../models'); // Import your Role model
-
+const models = require('../models');
 exports.getRoles = async (req, res) => {
   try {
     // Retrieve a list of all Roles from the database
-    const roles = await Role.findAll();
+    const roles = await models.role.findAll();
 
     return res.status(200).json(roles);
   } catch (error) {
@@ -18,7 +18,7 @@ exports.createRoles = async (req, res) => {
     const { role, userId } = req.body;
 
     // Create a new Role in the database
-    const newRole = await Role.create({ role, userId });
+    const newRole = await models.role.create({ role, userId });
 
     return res.status(201).json(newRole);
   } catch (error) {
